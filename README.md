@@ -1,28 +1,37 @@
-# Project
+# Bonsai Twin Builder connector
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+A connector for using Ansys Twin Builder with [Microsoft Project Bonsai](https://azure.microsoft.com/en-us/services/project-bonsai/).
 
-As the maintainer of this project, please make a few updates:
+## Installation
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+> This section should list steps for installing components that users will need, such as:
+> * Ansys Twin Builder applications, tools, or SDKs
+> * The connector itself
+> * Any other dependencies required by the connector
 
-## Contributing
+## Usage: Running a local simulator
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+> Assume that a user has already created a simulation using Ansys Twin Builder. Feel free to include a link to Ansys Twin Builder's documentation if you think it would be helpful, but it isn't necessary to document how to use Ansys Twin Builder itself.
+>
+> This section should list steps for using the connector to run a Ansys Twin Builder simulation with the Bonsai service as a local simulator, such as:
+> * Required or recommended settings that must be made in Ansys Twin Builder when users create simulations.
+> * How the simulation's states, actions, and initial configuration should be set up in Ansys Twin Builder.
+> * How to execute the simulation as a local Bonsai simulator. For example, this could include an example command-line argument for doing so.
+> * How to identify if your local simulator is running correctly. For example, something like: If the simulation is running successfully, command line output should show "Sim successfully registered" and the Bonsai workspace should show the Ansys Twin Builder simulator name under the Simulators section, listed as Unmanaged.
+>
+> Optional: Does the connector for Ansys Twin Builder allow an integrated way of launching a local simulator, debugging a local simulator, or visualizing a local simulator as it executes via a user interface inside Ansys Twin Builder? Such capabilities can be described here.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+## Usage: Scaling your simulator
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+> This section should list steps for running multiple simulator instances to scale Bonsai training.
+>
+> Typically this is done by adding a simulator container to your Bonsai workspace. In that case, this section will include:
+> * Command line arguments for building a container with the Ansys Twin Builder connector and the user's simulation.
+> * A link to the documentation topic [Add a training simulator to your Bonsai workspace](https://docs.microsoft.com/en-us/bonsai/guides/add-simulator?tabs=add-cli%2Ctrain-inkling&pivots=sim-platform-other) for information about how to upload the container, add it to Bonsai, and scale the simulator.
+>
+> It is less desirable, but if it is the case that Ansys Twin Builder cannot be run inside a scalable container then an alternate means of scaling simulator instances such as [bonsai-batch](https://github.com/microsoft/bonsai-batch) can be documented here.
+>
+> Optional: Does the connector for Ansys Twin Builder allow an integrated way of uploading a simulator to the Bonsai service or scaling the simulator instances for training via a user interface inside Ansys Twin Builder? Such capabilities can be described here.
 
 ## Trademarks
 
