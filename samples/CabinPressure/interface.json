@@ -1,0 +1,141 @@
+{
+     "description": {
+          "action": {
+               "category": "Struct",
+               "fields": [
+                    {
+                         "name": "altitude",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": 0.0,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "velocity",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": 0.0,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "controlFlow",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": 0.0,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "outflow",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": 0.0,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    }
+               ]
+          },
+          "config": {
+               "category": "Struct",
+               "fields": [
+                    {
+                         "name": "step_size",
+                         "type": {
+                              "category": "Number",
+                              "comment": "The step size for reading from the model",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    }
+               ]
+          },
+          "state": {
+               "category": "Struct",
+               "fields": [
+                    {
+                         "name": "PC",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "PCabin",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "ceiling_t",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "altitude_out",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    },
+                    {
+                         "name": "velocity_out",
+                         "type": {
+                              "category": "Number",
+                              "comment": "",
+                              "defaultValue": "",
+                              "start": null,
+                              "step": null,
+                              "stop": null,
+                              "values": []
+                         }
+                    }
+               ]
+          }
+     },
+     "name": "TwinModelNew",
+     "timeout": 60
+}

@@ -4,34 +4,56 @@ A connector for using Ansys Twin Builder with [Microsoft Project Bonsai](https:/
 
 ## Installation
 
-> This section should list steps for installing components that users will need, such as:
-> * Ansys Twin Builder applications, tools, or SDKs
-> * The connector itself
-> * Any other dependencies required by the connector
+Create and activate a virtual conda environment with the sample package requirements installed.
+
+```sh
+conda env create -f environment.yml
+conda activate ansystwin
+```
 
 ## Usage: Running a local simulator
 
-> Assume that a user has already created a simulation using Ansys Twin Builder. Feel free to include a link to Ansys Twin Builder's documentation if you think it would be helpful, but it isn't necessary to document how to use Ansys Twin Builder itself.
->
-> This section should list steps for using the connector to run a Ansys Twin Builder simulation with the Bonsai service as a local simulator, such as:
-> * Required or recommended settings that must be made in Ansys Twin Builder when users create simulations.
-> * How the simulation's states, actions, and initial configuration should be set up in Ansys Twin Builder.
-> * How to execute the simulation as a local Bonsai simulator. For example, this could include an example command-line argument for doing so.
-> * How to identify if your local simulator is running correctly. For example, something like: If the simulation is running successfully, command line output should show "Sim successfully registered" and the Bonsai workspace should show the Ansys Twin Builder simulator name under the Simulators section, listed as Unmanaged.
->
-> Optional: Does the connector for Ansys Twin Builder allow an integrated way of launching a local simulator, debugging a local simulator, or visualizing a local simulator as it executes via a user interface inside Ansys Twin Builder? Such capabilities can be described here.
+This connector assumes you have already created a simulation using [Ansys Twin Builder](https://www.ansys.com/products/systems/ansys-twin-builder).
+
+1. Create an empty brain on Bonsai.
+
+   ```sh
+   bonsai brain create -n <brain_name>
+   ```
+
+2. Update the brain with your inkling file.
+
+    ```sh
+    bonsai brain version update-inkling \   
+        -n <brain_name> \
+        -f <inkling_filename.ink>
+    ```
+3. Register your simulator by launching it locally.
+
+   ```sh
+   python main.py
+   ```
+
+4. Connect your registered sim to the brain:
+
+   ```sh
+   bonsai simulator unmanaged connect \                          
+       -b <brain_name> \
+       -a Train \
+       -c <concept_name> \
+       --simulator-name <simulator_name> 
+   ```
 
 ## Usage: Scaling your simulator
 
-> This section should list steps for running multiple simulator instances to scale Bonsai training.
->
-> Typically this is done by adding a simulator container to your Bonsai workspace. In that case, this section will include:
-> * Command line arguments for building a container with the Ansys Twin Builder connector and the user's simulation.
-> * A link to the documentation topic [Add a training simulator to your Bonsai workspace](https://docs.microsoft.com/en-us/bonsai/guides/add-simulator?tabs=add-cli%2Ctrain-inkling&pivots=sim-platform-other) for information about how to upload the container, add it to Bonsai, and scale the simulator.
->
-> It is less desirable, but if it is the case that Ansys Twin Builder cannot be run inside a scalable container then an alternate means of scaling simulator instances such as [bonsai-batch](https://github.com/microsoft/bonsai-batch) can be documented here.
->
-> Optional: Does the connector for Ansys Twin Builder allow an integrated way of uploading a simulator to the Bonsai service or scaling the simulator instances for training via a user interface inside Ansys Twin Builder? Such capabilities can be described here.
+Scale your simulator by building the image and pushing it to your registry.
+
+   ```sh
+   az acr build --registry <your_registry>
+                --image cabinpressure:latest . 
+                --file Dockerfile 
+                --platform windows
+   ```
 
 ## Trademarks
 

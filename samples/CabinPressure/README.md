@@ -1,22 +1,33 @@
 # Cabin Pressure
 
-> Describe your sample. What is it that it simulates?
+The Cabin Pressure Control System (CPCS) is an avionics system designed to minimize the rate of change of cabin temperature and pressure. The purpose of the CPCS is to ensure the safety of the airframe and passengers while maximizing comfort during all phases of flight. ANSYS Twin Builder models the CPCS components (actuators, sensors, etc.) to enable optimization and validation of the component choices with the system response. 
+
+In this example, the goal is to optimize the control of two flow rate valves that regulate cabin temperature and pressure. Comfort is characterized by meeting the set point temperature (296K), while safety is achieved by matching a variable cabin pressure controller set point. Ultimately, the controller should learn to balance safety and comfort as the altitude and velocity of the airframe changes throughout the duration of the flight.
+
 
 ## States
 
-> Describe the simulation's state variables. A table can be a good way to document this. For example:
 > | State                    | Range         | Notes |
 > | ------------------------ | ------------- | ----- |
-> | QuantityA                | [-2.4..2.4]   | Quantity of A in the hoppers. |
-> | PositionB                | [-Inf..Inf]   | Position of B. |
+> | PC                | []   | Cabin pressure controller set point. |
+> | PCabin                | []   | Cabin pressure. |
+> | ceiling_t                | []   | Cabin temperature at ceiling level. |
+> | altitude_out                | []   | Altitude of airplane. |
+> | velocity_out                | []   | Velocity of airplane. |
 
 ## Actions
 
-> Describe the simulation's action variables. A table can be a good way to document this.
+> | Action                    | Range         | Notes |
+> | ------------------------ | ------------- | ----- |
+> | controlFlow                | [0 .. 6]   |  |
+> | outflow                | [0 .. 345]   |  |
+
 
 ## Configuration Parameters
 
-> Describe the settings that are used to initialize the simulation. A table can be a good way to document this.
+> | Config                    | Range         | Notes |
+> | ------------------------ | ------------- | ----- |
+> | step_size                | [0 .. 1]   |  |
 
 ## Usage: Running a local simulator
 
