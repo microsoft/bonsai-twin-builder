@@ -1,0 +1,7 @@
+venv/
+*.log
+twin_runtime/__pycache__/
+.idea/
+*.pyc
+*.png
+*.aedtresults/
