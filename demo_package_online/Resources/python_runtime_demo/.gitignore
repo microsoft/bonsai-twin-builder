@@ -5,3 +5,4 @@ twin_runtime/__pycache__/
 *.pyc
 *.png
 *.aedtresults/
+/app/TwinModel_batch_mode_output.csv
