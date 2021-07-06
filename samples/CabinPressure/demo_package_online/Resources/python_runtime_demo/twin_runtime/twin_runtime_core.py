@@ -1,6 +1,6 @@
-from twin_runtime.twin_runtime_error import *
-from twin_runtime.twin_runtime_error import TwinRuntimeError
-from twin_runtime.log_level import LogLevel
+from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_error import *
+from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_error import TwinRuntimeError
+from demo_package_online.Resources.python_runtime_demo.twin_runtime.log_level import LogLevel
 
 from pathlib import Path
 from ctypes import*

@@ -108,7 +108,7 @@ if __name__ == '__main__':
     client = BonsaiClient(config_client)
 
     # Create simulator session and init sequence id
-    twin_model_file = "./sim/TwinModelNew2.twin"
+    twin_model_file = "./demo_package_online/Resources/python_runtime_demo/app/TwinModel.twin"
     sim = GenericTwinBuilderSimulator(twin_model_file)
     # With CSV file
     # csv_file = "./sim/altitude_velocity.csv"

@@ -7,8 +7,8 @@ import pandas as pd
 import numpy as np
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from AnsysTwinConnector.twin_runtime_core import TwinRuntime
-from AnsysTwinConnector.twin_runtime_core import LogLevel
+from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_core import TwinRuntime
+from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_core import LogLevel
 
 class GenericTwinModelWithCSV():
 
