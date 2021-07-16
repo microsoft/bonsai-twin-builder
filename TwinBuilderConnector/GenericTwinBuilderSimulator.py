@@ -1,18 +1,5 @@
-import os
-import sys
-import logging
-from typing import Any, Dict, List
-import json
+from typing import Dict, List
 
-from microsoft_bonsai_api.simulator.client import BonsaiClient, BonsaiClientConfig
-from microsoft_bonsai_api.simulator.generated.models import (
-    SimulatorInterface,
-    SimulatorState,
-    SimulatorSessionResponse,
-)
-import time
-import argparse
-import datetime
 from GenericModel import GenericTwinModel
 from GenericModelWithCSV import GenericTwinModelWithCSV
 
@@ -23,9 +10,9 @@ class GenericTwinBuilderSimulator():
         self.simulator = None
         
         if csv_file == None:
-            self.simulator= GenericTwinModel(twin_model_file)
+            self.simulator = GenericTwinModel(twin_model_file)
         else:
-            self.simulator=GenericTwinModelWithCSV(twin_model_file, csv_file)
+            self.simulator = GenericTwinModelWithCSV(twin_model_file, csv_file)
       
         
     def get_state(self) -> Dict[str, float]:
