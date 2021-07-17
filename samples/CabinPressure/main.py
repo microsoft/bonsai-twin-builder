@@ -26,8 +26,6 @@ from microsoft_bonsai_api.simulator.generated.models import (
 import time
 import argparse
 import datetime
-from GenericModel import GenericTwinModel
-from GenericModelWithCSV import GenericTwinModelWithCSV
 
 # Add parent directory containing the TwinBuilderConnector folder to path.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -76,6 +74,13 @@ if __name__ == '__main__':
 
     # Create simulator session and init sequence id
     twin_model_file = "./demo_package_online/Resources/python_runtime_demo/app/TwinModel.twin"
+    CUR_DIR = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
+    if not os.path.isabs(twin_model_file):
+        twin_model_file = os.path.join(CUR_DIR, *twin_model_file.split(os.sep))
+    if not os.path.isfile(twin_model_file):
+        print('File does not exist: {}'.format(twin_model_file))
+        sys.exit(1)
+
     sim = GenericTwinBuilderSimulator(twin_model_file)
     # With CSV file
     # csv_file = "./sim/altitude_velocity.csv"

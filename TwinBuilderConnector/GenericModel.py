@@ -25,14 +25,6 @@ class GenericTwinModel():
 
     def reset(self, step_size):
         self.done = False
-        CUR_DIR = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
-
-        if not os.path.isabs(self.twin_model_file):
-            self.twin_model_file = os.path.join(CUR_DIR, *self.twin_model_file.split(os.sep))
-
-        if not os.path.isfile(self.twin_model_file):
-            print('File does not exist: {}'.format(self.twin_model_file))
-            sys.exit(1)
 
         runtime_log = self.twin_model_file.replace('.twin', '.log')
 

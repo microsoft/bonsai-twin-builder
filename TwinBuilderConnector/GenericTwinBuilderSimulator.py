@@ -1,7 +1,7 @@
 from typing import Dict, List
 
-from GenericModel import GenericTwinModel
-from GenericModelWithCSV import GenericTwinModelWithCSV
+from .GenericModel import GenericTwinModel
+from .GenericModelWithCSV import GenericTwinModelWithCSV
 
 
 class GenericTwinBuilderSimulator():
