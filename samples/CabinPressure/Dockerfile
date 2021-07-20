@@ -25,5 +25,5 @@ COPY ./TwinBuilderConnector/ /TwinBuilderConnector
 COPY ./samples/CabinPressure/ /samples/CabinPressure/
 WORKDIR /samples/CabinPressure
 ENV LD_LIBRARY_PATH=/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime:/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime/lib
-RUN pip install -r /samples/CabinPressure/requirements.txt
+RUN pip install -r /TwinBuilderConnector/requirements.txt
 CMD python3 /samples/CabinPressure/main.py
