@@ -1,9 +1,9 @@
 import os
 import sys
 import logging
-from typing import Any, Dict, List
 import json
 
+from azure.core.exceptions import HttpResponseError
 from microsoft_bonsai_api.simulator.client import BonsaiClient, BonsaiClientConfig
 from microsoft_bonsai_api.simulator.generated.models import (
     SimulatorInterface,

@@ -14,7 +14,6 @@ Usage:
 import os
 import sys
 import logging
-from typing import Any, Dict, List
 import json
 
 from microsoft_bonsai_api.simulator.client import BonsaiClient, BonsaiClientConfig
