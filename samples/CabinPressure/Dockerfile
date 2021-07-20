@@ -21,10 +21,9 @@ RUN alias pip='/usr/local/bin/pip3'
 RUN pip3 install --upgrade pip
 
 # Copy resources from host machine
-RUN mkdir /CabinPressure
-COPY ./ /CabinPressure/
-WORKDIR /CabinPressure
-ENV LD_LIBRARY_PATH=/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime:/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime/lib
-RUN pip install -r requirements.txt
-WORKDIR /CabinPressure
-CMD python3 /CabinPressure/main.py
+COPY ./TwinBuilderConnector/ /TwinBuilderConnector
+COPY ./samples/CabinPressure/ /samples/CabinPressure/
+WORKDIR /samples/CabinPressure
+ENV LD_LIBRARY_PATH=/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime:/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime/lib
+RUN pip install -r /samples/CabinPressure/requirements.txt
+CMD python3 /samples/CabinPressure/main.py
