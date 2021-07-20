@@ -1,8 +1,0 @@
-venv/
-*.log
-twin_runtime/__pycache__/
-.idea/
-*.pyc
-*.png
-*.aedtresults/
-/app/TwinModel_batch_mode_output.csv

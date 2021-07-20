@@ -1,5 +1,0 @@
-pathlib
-numpy
-matplotlib
-pandas
-
