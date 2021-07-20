@@ -1,18 +1,14 @@
 from typing import Dict, List
 
 from .GenericModel import GenericTwinModel
-from .GenericModelWithCSV import GenericTwinModelWithCSV
 
 
 class GenericTwinBuilderSimulator():
-    def __init__(self, twin_model_file, csv_file=None):
+    def __init__(self, twin_model_file):
         # super().__init__()
         self.simulator = None
         
-        if csv_file == None:
-            self.simulator = GenericTwinModel(twin_model_file)
-        else:
-            self.simulator = GenericTwinModelWithCSV(twin_model_file, csv_file)
+        self.simulator = GenericTwinModel(twin_model_file)
       
         
     def get_state(self) -> Dict[str, float]:
