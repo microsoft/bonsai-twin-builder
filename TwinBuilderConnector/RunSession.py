@@ -123,6 +123,7 @@ def RunSession(twin_model_file):
                 sim.episode_step(event.episode_step.action)
             elif event.type == "EpisodeFinish":
                 print("Episode Finishing...")
+                sim.episode_finish()
                 iteration = 0
             elif event.type == "Unregister":
                 print("Simulator Session unregistered by platform, Registering again!")
