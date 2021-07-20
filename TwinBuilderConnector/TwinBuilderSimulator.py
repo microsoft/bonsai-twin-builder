@@ -1,6 +1,7 @@
 from typing import Dict, List
-from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_core import TwinRuntime
-from demo_package_online.Resources.python_runtime_demo.twin_runtime.twin_runtime_core import LogLevel
+
+from twin_runtime.twin_runtime_core import TwinRuntime
+from twin_runtime.twin_runtime_core import LogLevel
 
 class TwinBuilderSimulator():
     def __init__(self, twin_model_file):

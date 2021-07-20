@@ -24,6 +24,6 @@ RUN pip3 install --upgrade pip
 COPY ./TwinBuilderConnector/ /TwinBuilderConnector
 COPY ./samples/CabinPressure/ /samples/CabinPressure/
 WORKDIR /samples/CabinPressure
-ENV LD_LIBRARY_PATH=/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime:/samples/CabinPressure/demo_package_online/Resources/python_runtime_demo/twin_runtime/lib
+ENV LD_LIBRARY_PATH=/samples/CabinPressure/CabinPressureTwin/twin_runtime:/samples/CabinPressure/CabinPressureTwin/twin_runtime/lib
 RUN pip install -r /TwinBuilderConnector/requirements.txt
 CMD python3 /samples/CabinPressure/main.py

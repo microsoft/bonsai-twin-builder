@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 
 # Add parent directory containing the TwinBuilderConnector folder to path.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+# Add CabinPressureTwin directory containing twin_runtime to the path.
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "CabinPressureTwin"))
+
+print(f"path is {sys.path}")
 
 from TwinBuilderConnector.RunSession import RunSession
 
 if __name__ == '__main__':
-    twin_model_file = "./demo_package_online/Resources/python_runtime_demo/app/TwinModel.twin"
+    twin_model_file = "./CabinPressureTwin/TwinModel.twin"
 
     # Locate twin_model_file if it is relative path from this file.
     CUR_DIR = os.path.abspath(os.path.dirname(os.path.realpath(__file__)))
