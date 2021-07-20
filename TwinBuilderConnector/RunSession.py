@@ -14,7 +14,7 @@ import time
 import argparse
 import datetime
 
-from .GenericTwinBuilderSimulator import GenericTwinBuilderSimulator
+from .TwinBuilderSimulator import TwinBuilderSimulator
 
 def CreateSession(
     client: BonsaiClient, registration_info: SimulatorInterface, config_client: BonsaiClientConfig
@@ -53,7 +53,7 @@ def RunSession(twin_model_file):
     client = BonsaiClient(config_client)
 
     # Create simulator session and init sequence id
-    sim = GenericTwinBuilderSimulator(twin_model_file)
+    sim = TwinBuilderSimulator(twin_model_file)
 
     # Load json file as simulator integration config type file
     with open("interface.json") as file:

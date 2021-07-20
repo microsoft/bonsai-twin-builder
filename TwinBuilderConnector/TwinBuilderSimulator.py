@@ -3,7 +3,7 @@ from typing import Dict, List
 from .GenericModel import GenericTwinModel
 
 
-class GenericTwinBuilderSimulator():
+class TwinBuilderSimulator():
     def __init__(self, twin_model_file):
         # super().__init__()
         self.simulator = None
