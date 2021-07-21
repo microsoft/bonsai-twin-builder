@@ -15,16 +15,12 @@ class TwinBuilderSimulator():
 
     def reset(self, step_size):
         self.done = False
-
         runtime_log = self.twin_model_file.replace('.twin', '.log')
-
         self.step_size = step_size
 
         # Load Twin, set the parameters values, initialize (and generate snapshots, output)
         self.twin_runtime = TwinRuntime(self.twin_model_file, runtime_log, log_level=LogLevel.TWIN_LOG_ALL)
-
         self.twin_runtime.twin_instantiate()
-
         self.twin_runtime.twin_initialize()
 
         self.state['PC'] = 0
@@ -41,8 +37,7 @@ class TwinBuilderSimulator():
 
     def get_state(self) -> Dict[str, float]:
         """Called to retreive the current state of the simulator. """
-        print("returning state:")
-        print(self.state)
+        print(f"returning state: {self.state}")
         return self.state
 
     def halted(self) -> bool:
