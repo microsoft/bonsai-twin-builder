@@ -23,4 +23,5 @@ if __name__ == '__main__':
         print('File does not exist: {}'.format(twin_model_file))
         sys.exit(1)
 
-    RunSession(twin_model_file)
+    state_variable_names = ['PC', 'PCabin', 'ceiling_t', 'altitude_out', 'velocity_out']
+    RunSession(twin_model_file, state_variable_names)

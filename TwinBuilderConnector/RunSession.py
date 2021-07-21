@@ -2,6 +2,7 @@ import os
 import sys
 import logging
 import json
+from typing import Dict, List
 
 from azure.core.exceptions import HttpResponseError
 from microsoft_bonsai_api.simulator.client import BonsaiClient, BonsaiClientConfig
@@ -47,13 +48,13 @@ def CreateSession(
         )
         raise ex
 
-def RunSession(twin_model_file):
+def RunSession(twin_model_file, state_variable_names: List):
     # Configure client to interact with Bonsai service
     config_client = BonsaiClientConfig()
     client = BonsaiClient(config_client)
 
     # Create simulator session and init sequence id
-    sim = TwinBuilderSimulator(twin_model_file)
+    sim = TwinBuilderSimulator(twin_model_file, state_variable_names)
 
     # Load json file as simulator integration config type file
     with open("interface.json") as file:

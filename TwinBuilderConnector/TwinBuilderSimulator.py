@@ -4,11 +4,12 @@ from twin_runtime.twin_runtime_core import TwinRuntime
 from twin_runtime.twin_runtime_core import LogLevel
 
 class TwinBuilderSimulator():
-    def __init__(self, twin_model_file):
+    def __init__(self, twin_model_file, state_variable_names: List):
         self.state = {}
         self.twin_runtime = None #assigned in reset
         self.done = False
         self.twin_model_file = twin_model_file
+        self.state_variable_names = state_variable_names
         self.step_size = 0.5
         self.time_index = 0
         self.reset(self.step_size)
@@ -26,11 +27,8 @@ class TwinBuilderSimulator():
         self.twin_runtime.twin_instantiate()
         self.twin_runtime.twin_initialize()
 
-        self.state['PC'] = 0
-        self.state['PCabin'] = 0
-        self.state['ceiling_t'] = 0
-        self.state['altitude_out'] = 0
-        self.state['velocity_out'] = 0
+        for state_variable_name in self.state_variable_names:
+            self.state[state_variable_name] = 0
 
         self.time_index = 0
         self.state['time_index'] = self.time_index
@@ -68,10 +66,10 @@ class TwinBuilderSimulator():
 
         self.twin_runtime.twin_simulate(self.time_index)
 
-        for f in ['PC','PCabin','ceiling_t','altitude_out','velocity_out']:
-            value = self.twin_runtime.twin_get_output_by_name(f).value
+        for state_variable_name in self.state_variable_names:
+            value = self.twin_runtime.twin_get_output_by_name(state_variable_name).value
             print(value)
-            self.state[f] = value
+            self.state[state_variable_name] = value
 
         self.state['time_index'] = self.time_index
         #increase the index
