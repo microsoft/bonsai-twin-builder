@@ -18,6 +18,9 @@ class TwinBuilderSimulator():
         runtime_log = self.twin_model_file.replace('.twin', '.log')
         self.step_size = step_size
 
+        if self.twin_runtime != None:
+            self.twin_runtime.twin_close()
+
         # Load Twin, set the parameters values, initialize (and generate snapshots, output)
         self.twin_runtime = TwinRuntime(self.twin_model_file, runtime_log, log_level=LogLevel.TWIN_LOG_ALL)
         self.twin_runtime.twin_instantiate()
