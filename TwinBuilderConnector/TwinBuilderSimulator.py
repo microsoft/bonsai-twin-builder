@@ -62,7 +62,7 @@ class TwinBuilderSimulator():
 
         self.runloop(action)
 
-    def runloop(self,action:dict):
+    def runloop(self,action: Dict):
         for f in ['controlFlow','outflow']:
             self.twin_runtime.twin_set_input_by_name(f, action[f])
 
