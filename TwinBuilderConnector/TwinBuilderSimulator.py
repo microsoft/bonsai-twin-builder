@@ -4,12 +4,17 @@ from twin_runtime.twin_runtime_core import TwinRuntime
 from twin_runtime.twin_runtime_core import LogLevel
 
 class TwinBuilderSimulator():
-    def __init__(self, twin_model_file, state_variable_names: List):
+    def __init__(self, twin_model_file, state_variable_names: List,
+                 action_variable_names: List,
+                 number_of_warm_up_steps, warm_up_action_variable_values: List):
         self.state = {}
         self.twin_runtime = None #assigned in reset
         self.done = False
         self.twin_model_file = twin_model_file
         self.state_variable_names = state_variable_names
+        self.action_variable_names = action_variable_names
+        self.number_of_warm_up_steps = number_of_warm_up_steps
+        self.warm_up_action_variable_values = warm_up_action_variable_values
         self.step_size = 0.5
         self.time_index = 0
         self.reset(self.step_size)
@@ -32,9 +37,12 @@ class TwinBuilderSimulator():
 
         self.time_index = 0
         self.state['time_index'] = self.time_index
-        # Start at average action values:
-        self.episode_step({'controlFlow': (6.0-0.0)/2.0,\
-            'outflow':(350.0-0.0)/2.0})
+
+        # Run initial steps to "warm up" the simulation
+        if self.number_of_warm_up_steps > 0:
+            action = dict(zip(self.action_variable_names, self.warm_up_action_variable_values))
+            for i in range(self.number_of_warm_up_steps):
+                self.episode_step(action)
 
     def get_state(self) -> Dict[str, float]:
         """Called to retreive the current state of the simulator. """
@@ -53,15 +61,7 @@ class TwinBuilderSimulator():
         
     def episode_step(self, action: Dict):
         """ Called for each step of the episode """
-        #let the sim get a warm up
-        if self.time_index == 0:
-            for i in range(5):
-                self.runloop(action)
-
-        self.runloop(action)
-
-    def runloop(self,action: Dict):
-        for f in ['controlFlow','outflow']:
+        for f in action.keys():
             self.twin_runtime.twin_set_input_by_name(f, action[f])
 
         self.twin_runtime.twin_simulate(self.time_index)

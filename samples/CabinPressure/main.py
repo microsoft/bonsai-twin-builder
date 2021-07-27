@@ -24,4 +24,6 @@ if __name__ == '__main__':
         sys.exit(1)
 
     state_variable_names = ['PC', 'PCabin', 'ceiling_t', 'altitude_out', 'velocity_out']
-    RunSession(twin_model_file, state_variable_names)
+    action_variable_names = ['controlFlow', 'outflow']
+    action_variable_values = [(6.0-0.0)/2.0, (350.0-0.0)/2.0] # start at average action values
+    RunSession(twin_model_file, state_variable_names, action_variable_names, 5, action_variable_values)

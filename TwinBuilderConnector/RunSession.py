@@ -48,13 +48,17 @@ def CreateSession(
         )
         raise ex
 
-def RunSession(twin_model_file, state_variable_names: List):
+def RunSession(twin_model_file,
+               state_variable_names: List,
+               action_variable_names: List,
+               number_of_warm_up_steps, warm_up_action_variable_values: List):
     # Configure client to interact with Bonsai service
     config_client = BonsaiClientConfig()
     client = BonsaiClient(config_client)
 
     # Create simulator session and init sequence id
-    sim = TwinBuilderSimulator(twin_model_file, state_variable_names)
+    sim = TwinBuilderSimulator(twin_model_file, state_variable_names, action_variable_names,
+                               number_of_warm_up_steps, warm_up_action_variable_values)
 
     # Load json file as simulator integration config type file
     with open("interface.json") as file:
