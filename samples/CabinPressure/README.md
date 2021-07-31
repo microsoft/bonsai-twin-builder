@@ -31,6 +31,17 @@ In this example, the goal is to optimize the control of two flow rate valves tha
 
 ## Usage: Running a local simulator
 
-> Describe how to execute the simulation as a local Bonsai simulator. For example, this could include an example command-line argument for doing so.
->
-> This is similar to the information from *Usage: Running a local simulator* in the [main README.md](../../README.md) It is helpful to have this as a quick-reference here for a user who just wants to quickly up and running with this specific sample.
+1. Run a single instance of the simulator locally:
+    ```
+    python main.py
+    ```
+    It should connect to the Bonsai service and print messages showing that it is idling.
+
+2. In a separate command window, create a brain and start training using either the UI in your Bonsai workspace or the following CLI commands:
+    ```
+    bonsai brain create -n CabinPressure
+    bonsai brain version update-inkling -f CabinPressure.ink -n CabinPressure
+    bonsai brain version start-training -n CabinPressure
+    bonsai simulator unmanaged connect -b CabinPressure -a Train -c ControlTemperatureAndPressure --simulator-name cabin_pressure
+    ```
+    Your simulation should run epsiodes with states and actions that appear in the Bonsai training graph.
