@@ -45,3 +45,22 @@ In this example, the goal is to optimize the control of two flow rate valves tha
     bonsai simulator unmanaged connect -b CabinPressure -a Train -c ControlTemperatureAndPressure --simulator-name cabin_pressure
     ```
     Your simulation should run epsiodes with states and actions that appear in the Bonsai training graph.
+
+## Usage: Scaling your simulator
+
+1. Scale your simulator by building the Docker container image and pushing it to your registry. In the following commands, `<SUBSCRIPTION_ID>`
+and `<ACR_REGISTRY_NAME>` should be replaced with [your workspace details](https://docs.microsoft.com/en-us/bonsai/cookbook/get-workspace-info).
+
+   ```
+   docker build -t twin-builder:latest -f Dockerfile ../..
+   az acr login --subscription <SUBSCRIPTION_ID> --name <ACR_REGISTRY_NAME>
+   docker tag twin-builder:latest <ACR_REGISTRY_NAME>.azurecr.io/twin-builder:latest
+   docker push <ACR_REGISTRY_NAME>.azurecr.io/twin-builder:latest
+   ```
+
+2. Add the simulator to your Bonsai workspace and start training with it using either the UI in your Bonsai workspace or the following CLI commands:
+
+   ```
+   bonsai simulator package container create --name CabinPressureSim -u <ACR_REGISTRY_NAME>.azurecr.io/twin-builder:latest --max-instance-count 25 -r 1 -m 1 -p Linux
+   bonsai brain version start-training -n CabinPressure --simulator-package-name CabinPressureSim
+   ```
