@@ -31,6 +31,8 @@ In this example, the goal is to optimize the control of two flow rate valves tha
 
 ## Usage: Running a local simulator
 
+Before starting, ensure that you have set up your Python environment as described in the Installation section of the [main README](../../README.md#Installation).
+
 1. Run a single instance of the simulator locally:
     ```
     python main.py

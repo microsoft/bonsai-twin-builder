@@ -4,11 +4,12 @@ A connector for using Ansys Twin Builder with [Microsoft Project Bonsai](https:/
 
 ## Installation
 
-Create and activate a virtual conda environment with the sample package requirements installed.
+In order to use this connector, you will need a Python 3.7 environment with the [required Python packages](TwinBuilderConnector/requirements.txt) installed. One way to do this is using a conda environment as follows:
 
-```sh
-conda env create -f environment.yml
-conda activate ansystwin
+```
+conda create -n bonsai-twin-builder python=3.7
+conda activate bonsai-twin-builder
+pip install -r TwinBuilderConnector/requirements.txt
 ```
 
 ## Usage: Running a local simulator
