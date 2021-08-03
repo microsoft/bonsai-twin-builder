@@ -12,49 +12,9 @@ conda activate bonsai-twin-builder
 pip install -r TwinBuilderConnector/requirements.txt
 ```
 
-## Usage: Running a local simulator
+## CabinPressure sample
 
-This connector assumes you have already created a simulation using [Ansys Twin Builder](https://www.ansys.com/products/systems/ansys-twin-builder).
-
-1. Create an empty brain on Bonsai.
-
-   ```sh
-   bonsai brain create -n <brain_name>
-   ```
-
-2. Update the brain with your inkling file.
-
-    ```sh
-    bonsai brain version update-inkling \   
-        -n <brain_name> \
-        -f <inkling_filename.ink>
-    ```
-3. Register your simulator by launching it locally.
-
-   ```sh
-   python main.py
-   ```
-
-4. Connect your registered sim to the brain:
-
-   ```sh
-   bonsai simulator unmanaged connect \                          
-       -b <brain_name> \
-       -a Train \
-       -c <concept_name> \
-       --simulator-name <simulator_name> 
-   ```
-
-## Usage: Scaling your simulator
-
-Scale your simulator by building the image and pushing it to your registry.
-
-   ```sh
-   az acr build --registry <your_registry>
-                --image cabinpressure:latest . 
-                --file Dockerfile 
-                --platform windows
-   ```
+The [CabinPressure sample](samples/CabinPressure/README.md) demonstrates how to use Bonsai with an Ansys Twin Builder model. It shows how to train a Bonsai brain that uses a digital twin to control the cabin pressure and temperature of an avionics system.
 
 ## Trademarks
 
