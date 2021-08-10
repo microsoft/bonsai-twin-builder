@@ -124,7 +124,7 @@ def RunSession(twin_model_file,
                 sim.episode_start(event.episode_start.config)
                 episode += 1
             elif event.type == "EpisodeStep":
-                print(f"Stepping with action {event.episode_step.action}")
+                print(f"Stepping iteration {iteration} with action {event.episode_step.action}")
                 iteration += 1
                 sim.episode_step(event.episode_step.action)
             elif event.type == "EpisodeFinish":
