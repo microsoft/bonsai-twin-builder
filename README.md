@@ -16,6 +16,15 @@ pip install -r TwinBuilderConnector/requirements.txt
 
 The [CabinPressure sample](samples/CabinPressure/README.md) demonstrates how to use Bonsai with an Ansys Twin Builder model. It shows how to train a Bonsai brain that uses a digital twin to control the cabin pressure and temperature of an avionics system.
 
+## CabinPressureTwin model
+
+The Twin Builer model in samples/CabinPressure/CabinPressureTwin contains a twin model, runtime, and code that are copyrighted example files from ANSYS, Inc. and is licensed by the terms outlined in [samples/CabinPressure/CabinPressureTwin/LICENSE.txt](samples/CabinPressure/CabinPressureTwin/LICENSE.txt).
+
+## CabinPressureTwin model
+
+include license and describe here
+compare to how we stated this for other vendor IP?
+
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
