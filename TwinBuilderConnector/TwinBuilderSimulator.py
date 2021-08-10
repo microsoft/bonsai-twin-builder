@@ -26,6 +26,7 @@ class TwinBuilderSimulator():
 
         if self.twin_runtime != None:
             self.twin_runtime.twin_close()
+            self.twin_runtime = None
 
         # Load Twin, set the parameters values, initialize (and generate snapshots, output)
         self.twin_runtime = TwinRuntime(self.twin_model_file, runtime_log, log_level=LogLevel.TWIN_LOG_ALL)
@@ -78,3 +79,4 @@ class TwinBuilderSimulator():
     def episode_finish(self):
         """ Called at the end of each episode """
         self.twin_runtime.twin_close()
+        self.twin_runtime = None
