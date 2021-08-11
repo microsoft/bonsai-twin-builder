@@ -1,3 +1,8 @@
+"""
+Runs the sample cabin pressure digital twin model as a Bonsai simulator.
+Copyright 2021, Microsoft Corp.
+"""
+
 #!/usr/bin/env python3
 import os
 import sys

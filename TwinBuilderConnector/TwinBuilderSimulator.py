@@ -1,3 +1,8 @@
+"""
+Uses the twin runtime to load a digital twin model and supports the reset, step, and state functions needed to use the digital twin with Bonsai.
+Copyright 2021, Microsoft Corp.
+"""
+
 from typing import Dict, List
 
 from twin_runtime.twin_runtime_core import TwinRuntime

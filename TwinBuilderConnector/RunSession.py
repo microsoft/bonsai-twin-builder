@@ -1,3 +1,8 @@
+"""
+Connects to the Bonsai service and runs training episodes using a digital twin model.
+Copyright 2021, Microsoft Corp.
+"""
+
 import os
 import sys
 import logging
