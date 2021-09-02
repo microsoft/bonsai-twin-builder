@@ -18,7 +18,7 @@ The [CabinPressure sample](samples/CabinPressure/README.md) demonstrates how to 
 
 ## CabinPressureTwin model
 
-The Twin Builer model in samples/CabinPressure/CabinPressureTwin contains a twin model, runtime, and code that are copyrighted example files from ANSYS, Inc. and is licensed by the terms outlined in [samples/CabinPressure/CabinPressureTwin/LICENSE.txt](samples/CabinPressure/CabinPressureTwin/LICENSE.txt).
+The Twin Builder model in samples/CabinPressure/CabinPressureTwin contains a twin model, runtime, and code that are copyrighted example files from ANSYS, Inc. and are licensed by the terms outlined in [samples/CabinPressure/CabinPressureTwin/LICENSE.txt](samples/CabinPressure/CabinPressureTwin/LICENSE.txt).
 
 ## Trademarks
 
