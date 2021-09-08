@@ -19,3 +19,11 @@
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE
+
+
+    NOTICE
+    
+    This repository is governed by the above MIT License with the exception of the following:
+    The Twin Builder model in samples/CabinPressure/CabinPressureTwin contains copyrighted
+    example files from ANSYS, Inc. that are licensed by the terms outlined in
+    samples/CabinPressure/CabinPressureTwin/LICENSE.txt.
