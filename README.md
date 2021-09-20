@@ -20,6 +20,11 @@ The [CabinPressure sample](samples/CabinPressure/README.md) demonstrates how to 
 
 The Twin Builder model in samples/CabinPressure/CabinPressureTwin contains a twin model, runtime, and code that are copyrighted example files from ANSYS, Inc. and are licensed by the terms outlined in [samples/CabinPressure/CabinPressureTwin/LICENSE.txt](samples/CabinPressure/CabinPressureTwin/LICENSE.txt).
 
+## Historical note
+
+For technical reasons, we weren't able to preserve the full history of changes during creation of this repository.
+[davidhcoe](https://github.com/davidhcoe) created the initial implementation of this connector, [jillianmclements](https://github.com/jillianmclements) contributed refactoring and documentation), and [sdk-bonsai](https://github.com/sdk-bonsai) performed machine teaching to train the brain.
+
 ## Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
